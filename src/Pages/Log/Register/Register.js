@@ -51,6 +51,7 @@ const Register = () => {
             </Row>
             <Row>
                 <h4>Already has an account? </h4>
+                <Link to="/login">Login</Link>
             </Row>
         </Container>
     );

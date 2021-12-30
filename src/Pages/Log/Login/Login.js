@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Authorization/hooks/useAuth';
 
 const Login = () => {
-    const { user, logInUser } = useAuth();
+    const { user, logInUser, authError } = useAuth();
     const [inputData, setInputData] = useState({});
     const location = useLocation();
     const navigate = useNavigate();
@@ -47,7 +47,8 @@ const Login = () => {
                 }
             </Row>
             <Row>
-                <h4>No accout yet! Create new account ß</h4>
+                <h4>No accout yet! Create new account.</h4>
+                <Link to="/register">Register</Link>
             </Row>
         </Container>
     );

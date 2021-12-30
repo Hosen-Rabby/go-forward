@@ -73,6 +73,7 @@ const useFirebase = () => {
         registerUser,
         logInUser,
         logOutUser,
+        authError
     }
 };
 

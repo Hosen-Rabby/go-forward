@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../Authorization/hooks/useAuth';
 
 const Navigation = () => {
-    const { user } = useAuth();
+    const { user,logOutUser } = useAuth();
     console.log(user.email);
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -15,13 +15,13 @@ const Navigation = () => {
                     <Nav className="me-auto">
                         {
                             user?.email ?
-                                <Link>
-                                    <Button>Logout</Button>
+                                <Link to="/login">
+                                <Button onClick={logOutUser}>Logout</Button>
                                 </Link>
-                                :
-                                <Button>Logout</Button>
 
-                                // <Link to="/login">Login</Link>
+                                :
+
+                                <Link to="/login">Login</Link>
 
                         }
                         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
